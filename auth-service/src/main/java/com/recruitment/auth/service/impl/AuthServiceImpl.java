@@ -257,24 +257,24 @@ public class AuthServiceImpl implements AuthService {
     }
     
     @Override
-    public void sendVerificationCode(String phone) {
+    public String sendVerificationCode(String phone) {
         long currentTime = System.currentTimeMillis();
         Long lastSendTime = verificationCodeTimeCache.get(phone);
-        
+
         if (lastSendTime != null && currentTime - lastSendTime < 60000) {
             throw new BusinessException(ResultCode.VERIFICATION_CODE_SEND_TOO_FAST);
         }
-        
+
         String code = String.format("%06d", random.nextInt(999999));
         System.out.println("===== 虚拟验证码生成 =====");
         System.out.println("手机号: " + phone);
         System.out.println("验证码: " + code);
         System.out.println("有效期: 5分钟");
         System.out.println("==========================");
-        
+
         verificationCodeCache.put(phone, code);
         verificationCodeTimeCache.put(phone, currentTime);
-        
+
         try {
             if (restTemplate != null) {
                 String smsUrl = "http://localhost:8089/sms/send";
@@ -283,29 +283,57 @@ public class AuthServiceImpl implements AuthService {
         } catch (Exception e) {
             System.out.println("短信服务调用失败，使用内存存储验证码: " + e.getMessage());
         }
+
+        return code;
     }
     
     @Override
     public boolean verifyCode(String phone, String code) {
         String storedCode = verificationCodeCache.get(phone);
         Long sendTime = verificationCodeTimeCache.get(phone);
-        
+
         if (storedCode == null || sendTime == null) {
             return false;
         }
-        
+
         if (System.currentTimeMillis() - sendTime > 300000) {
             verificationCodeCache.remove(phone);
             verificationCodeTimeCache.remove(phone);
             return false;
         }
-        
+
         boolean isValid = storedCode.equals(code);
         if (isValid) {
             verificationCodeCache.remove(phone);
             verificationCodeTimeCache.remove(phone);
         }
-        
+
         return isValid;
+    }
+
+    @Override
+    public void resetPassword(String phone, String code, String newPassword) {
+        // 验证验证码
+        if (!verifyCode(phone, code)) {
+            throw new BusinessException(ResultCode.VERIFICATION_CODE_ERROR);
+        }
+
+        // 查找用户
+        LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(User::getPhone, phone);
+        User user = userMapper.selectOne(queryWrapper);
+
+        if (user == null) {
+            throw new BusinessException(ResultCode.USER_NOT_FOUND);
+        }
+
+        // 更新密码
+        user.setPassword(passwordEncoder.encode(newPassword));
+        userMapper.updateById(user);
+
+        System.out.println("===== 密码重置成功 =====");
+        System.out.println("手机号: " + phone);
+        System.out.println("新密码: " + newPassword);
+        System.out.println("========================");
     }
 }

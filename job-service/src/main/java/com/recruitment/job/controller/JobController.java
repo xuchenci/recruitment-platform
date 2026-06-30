@@ -38,7 +38,7 @@ public class JobController {
     }
     
     /**
-     * 获取职位列表（分页）
+     * 获取职位列表（分页 + 多条件筛选）
      */
     @GetMapping("/list")
     public Result<?> getJobList(
@@ -46,28 +46,64 @@ public class JobController {
             @RequestParam(defaultValue = "10") Integer size,
             @RequestParam(required = false) String keyword,
             @RequestParam(required = false) String city,
-            @RequestParam(required = false) String jobType) {
+            @RequestParam(required = false) String category,
+            @RequestParam(required = false) String experience,
+            @RequestParam(required = false) String education,
+            @RequestParam(required = false) String salary) {
         try {
             com.baomidou.mybatisplus.core.conditions.query.QueryWrapper<Job> wrapper = new com.baomidou.mybatisplus.core.conditions.query.QueryWrapper<>();
             wrapper.eq("status", 1);
-            
+
+            // 关键词搜索（职位名称或企业名）
             if (keyword != null && !keyword.isEmpty()) {
-                wrapper.like("job_title", keyword);
+                wrapper.and(w -> w.like("job_title", keyword).or().like("description", keyword));
             }
+            // 城市筛选
             if (city != null && !city.isEmpty()) {
                 wrapper.eq("city", city);
             }
-            if (jobType != null && !jobType.isEmpty()) {
-                wrapper.eq("job_type", jobType.equals("全职") ? 1 : 2);
+            // 职位类别
+            if (category != null && !category.isEmpty()) {
+                try { wrapper.eq("category_id", Long.parseLong(category)); } catch (NumberFormatException ignored) {}
             }
-            
+            // 经验要求（包含选中级别及以下，让用户看全符合条件的机会）
+            // 应届生 < 1-3年 < 3-5年 < 5年以上
+            if (experience != null && !experience.isEmpty()) {
+                List<String> expLevels = new java.util.ArrayList<>();
+                switch (experience) {
+                    case "fresh": expLevels.add("应届生"); break;
+                    case "1-3": expLevels.addAll(List.of("应届生", "1-3年")); break;
+                    case "3-5": expLevels.addAll(List.of("应届生", "1-3年", "3-5年")); break;
+                    case "5+":  expLevels.addAll(List.of("应届生", "1-3年", "3-5年", "5-10年", "5年以上")); break;
+                }
+                if (!expLevels.isEmpty()) wrapper.in("experience_requirement", expLevels);
+            }
+            // 学历要求（包含选中级别及以下：大专 < 本科 < 硕士 < 博士）
+            if (education != null && !education.isEmpty()) {
+                List<String> eduLevels = new java.util.ArrayList<>();
+                switch (education) {
+                    case "college": eduLevels.add("大专"); break;
+                    case "bachelor": eduLevels.addAll(List.of("大专", "本科")); break;
+                    case "master":   eduLevels.addAll(List.of("大专", "本科", "硕士")); break;
+                    case "phd":      eduLevels.addAll(List.of("大专", "本科", "硕士", "博士")); break;
+                }
+                if (!eduLevels.isEmpty()) wrapper.in("education_requirement", eduLevels);
+            }
+            // 薪资范围
+            if (salary != null && !salary.isEmpty()) {
+                switch (salary) {
+                    case "0-5": wrapper.le("salary_min", 5); break;
+                    case "5-10": wrapper.between("salary_min", 5, 10); break;
+                    case "10-20": wrapper.between("salary_min", 10, 20); break;
+                    case "20-": wrapper.ge("salary_min", 20); break;
+                }
+            }
+
             long total = jobService.count(wrapper);
-            
             wrapper.orderByDesc("publish_time");
-            
             int offset = (page - 1) * size;
             wrapper.last("LIMIT " + offset + ", " + size);
-            
+
             List<Job> jobList = jobService.list(wrapper);
 
             List<Map<String, Object>> resultList = new java.util.ArrayList<>();
@@ -75,22 +111,27 @@ public class JobController {
                 Map<String, Object> item = new HashMap<>();
                 item.put("id", job.getId());
                 item.put("title", job.getJobTitle());
-                item.put("salaryRange", job.getSalaryMin() + "K-" + job.getSalaryMax() + "K");
+                item.put("salaryRange", (job.getSalaryMin() != null && job.getSalaryMax() != null)
+                        ? job.getSalaryMin() + "K-" + job.getSalaryMax() + "K" : "面议");
                 item.put("location", job.getCity());
-                item.put("experience", job.getExperienceRequirement());
-                item.put("education", job.getEducationRequirement());
-                item.put("viewCount", job.getViewCount());
+                item.put("experience", job.getExperienceRequirement() != null ? job.getExperienceRequirement() : "经验不限");
+                item.put("education", job.getEducationRequirement() != null ? job.getEducationRequirement() : "学历不限");
+                item.put("viewCount", job.getViewCount() != null ? job.getViewCount() : 0);
+                item.put("applicationCount", job.getApplyCount() != null ? job.getApplyCount() : 0);
+                item.put("createTime", job.getPublishTime() != null ? job.getPublishTime().toString() : "");
 
+                // 技能标签
                 if (job.getSkillRequirements() != null && !job.getSkillRequirements().isEmpty()) {
                     try {
                         item.put("skills", objectMapper.readValue(job.getSkillRequirements(), List.class));
                     } catch (JsonProcessingException e) {
-                        item.put("skills", new String[0]);
+                        item.put("skills", List.of());
                     }
                 } else {
-                    item.put("skills", new String[0]);
+                    item.put("skills", List.of());
                 }
 
+                // 企业信息
                 if (job.getEnterpriseId() != null) {
                     Enterprise enterprise = enterpriseMapper.selectById(job.getEnterpriseId());
                     if (enterprise != null) {
@@ -101,12 +142,16 @@ public class JobController {
                         item.put("enterpriseLogo", enterprise.getLogo());
                     }
                 }
+                if (!item.containsKey("enterpriseName")) {
+                    item.put("enterpriseName", "未知企业");
+                    item.put("industry", "");
+                    item.put("scale", "");
+                }
 
                 resultList.add(item);
             }
 
             int pages = (int) Math.ceil((double) total / size);
-
             Map<String, Object> pageResult = new HashMap<>();
             pageResult.put("records", resultList);
             pageResult.put("total", total);

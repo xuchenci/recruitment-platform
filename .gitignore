@@ -1,4 +1,4 @@
-# Project exclude paths
+# Build
 /ai-service/target/
 /analytics-service/target/
 /application-service/target/
@@ -12,3 +12,24 @@
 /resume-service/target/
 /sms-service/target/
 /student-service/target/
+
+# Logs
+*.log
+logs/
+
+# IDE
+.idea/
+.vscode/
+.trae/
+*.iml
+
+# Uploads
+uploads/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp
+temp_sql.sql
+qc

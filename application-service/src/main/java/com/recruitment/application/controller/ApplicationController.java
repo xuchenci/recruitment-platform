@@ -59,6 +59,9 @@ public class ApplicationController {
     @Autowired
     private JwtUtil jwtUtil;
 
+    @Autowired
+    private NotificationController notificationController;
+
     /**
      * 获取我的投递记录（学生端）
      */
@@ -232,8 +235,11 @@ public class ApplicationController {
     public Result<?> apply(@RequestBody Map<String, Object> params,
                            @RequestHeader(value = "Authorization", required = false) String token) {
         try {
-            Long jobId = ((Number) params.get("jobId")).longValue();
-            Long resumeId = params.get("resumeId") != null ? ((Number) params.get("resumeId")).longValue() : null;
+            Long jobId = toLong(params.get("jobId"));
+            if (jobId == null) {
+                return Result.error(400, "职位ID不能为空");
+            }
+            Long resumeId = toLong(params.get("resumeId"));
             String coverLetter = params.get("coverLetter") != null ? params.get("coverLetter").toString() : "";
 
             Job job = jobMapper.selectById(jobId);
@@ -252,7 +258,7 @@ public class ApplicationController {
             }
 
             if (userId == null) {
-                userId = (params.get("userId") != null) ? ((Number) params.get("userId")).longValue() : null;
+                userId = toLong(params.get("userId"));
             }
 
             if (userId == null) {
@@ -295,14 +301,21 @@ public class ApplicationController {
             return Result.success("投递成功");
         } catch (Exception e) {
             e.printStackTrace();
-            return Result.error(500, "投递失败: " + e.getMessage());
+            String msg = e.getMessage();
+            if (msg != null && msg.contains("Duplicate entry")) {
+                return Result.error(400, "您已投递过该职位，请勿重复投递");
+            }
+            return Result.error(500, "投递失败，请稍后重试");
         }
     }
 
     @PutMapping("/status")
     public Result<?> updateStatus(@RequestBody Map<String, Object> params) {
-        Long id = ((Number) params.get("id")).longValue();
-        Integer status = ((Number) params.get("status")).intValue();
+        Long id = toLong(params.get("id"));
+        Integer status = toInt(params.get("status"));
+        if (id == null || status == null) {
+            return Result.error(400, "参数不能为空");
+        }
         JobApplication app = jobApplicationMapper.selectById(id);
         if (app != null) {
             app.setStatus(status);
@@ -683,6 +696,39 @@ public class ApplicationController {
         return statusMap.getOrDefault(status, "未知");
     }
 
+    /**
+     * 创建用户通知
+     */
+    private void notifyUser(JobApplication app, String statusText) {
+        try {
+            Job job = app.getJobId() != null ? jobMapper.selectById(app.getJobId()) : null;
+            String jobTitle = job != null ? job.getJobTitle() : "未知职位";
+            String title = "投递状态更新";
+            String content = "您投递的「" + jobTitle + "」状态更新为：" + statusText;
+            notificationController.createNotification(app.getUserId(), title, content, "1", app.getId());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 安全地将 Object 转为 Long（兼容 String 和 Number）
+     */
+    private Long toLong(Object value) {
+        if (value == null) return null;
+        if (value instanceof Number) return ((Number) value).longValue();
+        try { return Long.parseLong(value.toString()); } catch (NumberFormatException e) { return null; }
+    }
+
+    /**
+     * 安全地将 Object 转为 Integer
+     */
+    private Integer toInt(Object value) {
+        if (value == null) return null;
+        if (value instanceof Number) return ((Number) value).intValue();
+        try { return Integer.parseInt(value.toString()); } catch (NumberFormatException e) { return null; }
+    }
+
     private String formatDateTime(LocalDateTime dateTime) {
         if (dateTime == null) return "";
         return dateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
@@ -803,7 +849,8 @@ public class ApplicationController {
             application.setUpdateTime(LocalDateTime.now());
             
             jobApplicationMapper.updateById(application);
-            
+
+            notifyUser(application, "已安排面试：" + (interviewTime != null ? interviewTime : ""));
             return Result.success("面试安排成功");
         } catch (Exception e) {
             e.printStackTrace();
@@ -821,21 +868,23 @@ public class ApplicationController {
             if (application == null) {
                 return Result.error(404, "投递记录不存在");
             }
-            
+
             String result = params.get("result") != null ? params.get("result").toString() : null;
             String feedback = params.get("comment") != null ? params.get("comment").toString() : "";
-            
+
             if ("pass".equals(result)) {
                 application.setStatus(4);
             } else if ("fail".equals(result)) {
                 application.setStatus(5);
             }
-            
+
             application.setFeedback(feedback);
             application.setUpdateTime(LocalDateTime.now());
-            
+
             jobApplicationMapper.updateById(application);
-            
+
+            String notifyTitle = "pass".equals(result) ? "面试通过，已录用" : "面试未通过";
+            notifyUser(application, notifyTitle);
             return Result.success("面试结果更新成功");
         } catch (Exception e) {
             e.printStackTrace();
@@ -936,7 +985,17 @@ public class ApplicationController {
             
             application.setUpdateTime(LocalDateTime.now());
             jobApplicationMapper.updateById(application);
-            
+
+            // 创建通知
+            String statusText = switch (action) {
+                case "pass", "shortlist" -> "通过初筛";
+                case "reject" -> "已拒绝";
+                case "interview" -> "已安排面试";
+                case "offer", "hire" -> "已录用";
+                default -> "状态已更新";
+            };
+            notifyUser(application, statusText);
+
             return Result.success("操作成功");
         } catch (Exception e) {
             e.printStackTrace();

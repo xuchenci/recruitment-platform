@@ -367,10 +367,22 @@ public class AnalyticsServiceImpl implements AnalyticsService {
         for (Job job : jobs) {
             String skills = job.getSkillRequirements();
             if (skills != null && !skills.isEmpty()) {
-                for (String skill : skills.split("[,，、]")) {
-                    skill = skill.trim();
-                    if (!skill.isEmpty()) {
-                        skillCount.merge(skill, 1, Integer::sum);
+                // 尝试作为JSON数组解析（兼容 [\"Java\", \"Spring Boot\"] 格式）
+                java.util.List<String> skillList = tryParseJsonArray(skills);
+                if (skillList != null) {
+                    for (String skill : skillList) {
+                        skill = skill.trim();
+                        if (!skill.isEmpty()) {
+                            skillCount.merge(skill, 1, Integer::sum);
+                        }
+                    }
+                } else {
+                    // 降级：按逗号分隔
+                    for (String skill : skills.split("[,，、]")) {
+                        skill = skill.trim().replaceAll("^[\\[\\]\"]+|[\\[\\]\"]+$", "").trim();
+                        if (!skill.isEmpty()) {
+                            skillCount.merge(skill, 1, Integer::sum);
+                        }
                     }
                 }
             }
@@ -675,5 +687,20 @@ public class AnalyticsServiceImpl implements AnalyticsService {
         item.put("name", name);
         item.put("value", value);
         return item;
+    }
+
+    /**
+     * 尝试将字符串解析为JSON数组，失败返回null
+     */
+    private java.util.List<String> tryParseJsonArray(String str) {
+        if (str == null || str.isEmpty()) return null;
+        String trimmed = str.trim();
+        if (!trimmed.startsWith("[")) return null;
+        try {
+            com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
+            return mapper.readValue(trimmed, java.util.List.class);
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

@@ -8,6 +8,7 @@ import com.recruitment.common.result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -99,15 +100,45 @@ public class AuthController {
      * @return 发送结果
      */
     @PostMapping("/verification-code")
-    public Result<String> sendVerificationCode(@RequestParam String phone) {
-        // 验证手机号格式
+    public Result<Map<String, String>> sendVerificationCode(@RequestParam String phone) {
         if (!phone.matches("^1[3-9]\\d{9}$")) {
             return Result.error("请输入正确的手机号");
         }
-        
+
         try {
-            authService.sendVerificationCode(phone);
-            return Result.success("验证码已发送");
+            String code = authService.sendVerificationCode(phone);
+            Map<String, String> data = new HashMap<>();
+            data.put("code", code);
+            data.put("phone", phone);
+            return Result.success(data);
+        } catch (RuntimeException e) {
+            return Result.error(e.getMessage());
+        }
+    }
+
+    /**
+     * 忘记密码 - 重置密码
+     * @param params {phone, code, newPassword}
+     */
+    @PostMapping("/reset-password")
+    public Result<String> resetPassword(@RequestBody Map<String, String> params) {
+        String phone = params.get("phone");
+        String code = params.get("code");
+        String newPassword = params.get("newPassword");
+
+        if (phone == null || !phone.matches("^1[3-9]\\d{9}$")) {
+            return Result.error("请输入正确的手机号");
+        }
+        if (code == null || code.isEmpty()) {
+            return Result.error("请输入验证码");
+        }
+        if (newPassword == null || newPassword.length() < 6) {
+            return Result.error("新密码至少6位");
+        }
+
+        try {
+            authService.resetPassword(phone, code, newPassword);
+            return Result.success("密码重置成功");
         } catch (RuntimeException e) {
             return Result.error(e.getMessage());
         }

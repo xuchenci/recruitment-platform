@@ -42,10 +42,11 @@ public interface AuthService {
     boolean validateToken(String token);
     
     /**
-     * 发送验证码
+     * 发送验证码（返回验证码，开发环境用于页面展示）
      * @param phone 手机号
+     * @return 验证码
      */
-    void sendVerificationCode(String phone);
+    String sendVerificationCode(String phone);
     
     /**
      * 验证验证码
@@ -54,4 +55,12 @@ public interface AuthService {
      * @return 是否有效
      */
     boolean verifyCode(String phone, String code);
+
+    /**
+     * 重置密码
+     * @param phone 手机号
+     * @param code 验证码
+     * @param newPassword 新密码
+     */
+    void resetPassword(String phone, String code, String newPassword);
 }
