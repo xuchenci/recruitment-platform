@@ -1,0 +1,74 @@
+server:
+  port: 8081
+  tomcat:
+    uri-encoding: UTF-8
+    charset: UTF-8
+
+# 前端地址（用于生成扫码登录URL，前端优先使用 window.location.origin）
+app:
+  frontend-url: http://172.20.190.20:5173
+
+spring:
+  application:
+    name: auth-service
+  http:
+    encoding:
+      enabled: true
+      charset: UTF-8
+      force: true
+  jackson:
+    charset: UTF-8
+    default-property-inclusion: non_null
+
+  cloud:
+    nacos:
+      discovery:
+        enabled: false
+      config:
+        enabled: false
+    sentinel:
+      enabled: false
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/recruitment_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&connectionCollation=utf8mb4_unicode_ci&characterSetResults=utf8mb4
+    username: root
+    password: 123456
+
+# 聚合数据配置
+juhe:
+  api:
+    key: e8795bb364bc0dd3155635968db98a2e
+    base-url: http://apis.juhe.cn
+
+# JWT配置
+jwt:
+  secret: recruitment-platform-secret-key-2024-for-hs512-algorithm-must-be-at-least-512-bits
+  expiration: 86400000
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+  mapper-locations: classpath*:mapper/**/*.xml
+  type-aliases-package: com.recruitment.common.entity
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+  packages-to-scan: com.recruitment.auth.controller
+  paths-to-match: /auth/**

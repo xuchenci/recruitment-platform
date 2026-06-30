@@ -1,0 +1,17 @@
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+17:07:32.587 [main] ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter -- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+No spring.config.import property has been defined
+
+Action:
+
+Add a spring.config.import=nacos: property to your configuration.
+	If configuration is not required add spring.config.import=optional:nacos: instead.
+	To disable this check, set spring.cloud.nacos.config.import-check.enabled=false.
+

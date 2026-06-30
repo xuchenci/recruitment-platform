@@ -1,0 +1,78 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: analytics-service
+
+  cloud:
+    nacos:
+      discovery:
+        enabled: false
+      config:
+        enabled: false
+    sentinel:
+      enabled: false
+    # 不使用nacos，服务独立运行
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://localhost:3306/recruitment_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&connectionCollation=utf8mb4_unicode_ci&characterSetResults=utf8mb4"
+    username: root
+    password: 123456
+    
+  # Redis配置（用于缓存统计数据）
+  data:
+    redis:
+      host: ${REDIS_HOST:127.0.0.1}
+      port: ${REDIS_PORT:6379}
+      database: 4
+      timeout: 5000ms
+
+# MyBatis Plus配置
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.recruitment.analytics.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deletedAt
+      logic-delete-value: "CURRENT_TIMESTAMP"
+      logic-not-delete-value: null
+
+# 数据分析配置
+analytics:
+  cache:
+    enabled: true
+    ttl: 3600  # 缓存有效期（秒）
+  chart:
+    # ECharts颜色主题
+    colors:
+      - "#5470c6"
+      - "#91cc75"
+      - "#fac858"
+      - "#ee6666"
+      - "#73c0de"
+      - "#3ba272"
+      - "#fc8452"
+      - "#9a60b4"
+  # 数据统计维度
+  dimensions:
+    - name: "day"
+      label: "按天"
+    - name: "week"
+      label: "按周"
+    - name: "month"
+      label: "按月"
+    - name: "year"
+      label: "按年"
+
+# 日志配置
+logging:
+  level:
+    com.recruitment.analytics: DEBUG
+    org.springframework.web: INFO

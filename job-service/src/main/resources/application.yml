@@ -1,0 +1,67 @@
+server:
+  port: 8084
+  tomcat:
+    uri-encoding: UTF-8
+    charset: UTF-8
+
+spring:
+  application:
+    name: job-service
+  http:
+    encoding:
+      enabled: true
+      charset: UTF-8
+      force: true
+  jackson:
+    charset: UTF-8
+    default-property-inclusion: non_null
+
+  cloud:
+    nacos:
+      discovery:
+        enabled: false
+      config:
+        enabled: false
+    sentinel:
+      enabled: false
+    # 不使用nacos，服务独立运行
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://localhost:3306/recruitment_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&connectionCollation=utf8mb4_unicode_ci&characterSetResults=utf8mb4"
+    username: root
+    password: 123456
+    
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 2
+    timeout: 5000ms
+  
+  # 第三方API配置
+  external:
+    apijobs:
+      api-key: ${API_JOBS_KEY:your-api-key-here}
+      base-url: https://api.apijobs.dev/v1
+
+jwt:
+  secret: recruitment-platform-secret-key-2024-for-hs512-algorithm-must-be-at-least-512-bits
+  expiration: 86400000
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deletedAt
+      logic-delete-value: "CURRENT_TIMESTAMP"
+      logic-not-delete-value: "NULL"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

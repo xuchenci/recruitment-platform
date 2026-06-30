@@ -1,0 +1,514 @@
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-06-29T10:42:26.232+08:00  INFO 18548 --- [student-service] [           main] c.r.student.StudentApplication           : Starting StudentApplication using Java 17.0.11 with PID 18548 (D:\recruitment-platform\student-service\target\classes started by 94738 in D:\recruitment-platform\student-service)
+2026-06-29T10:42:26.234+08:00  INFO 18548 --- [student-service] [           main] c.r.student.StudentApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-06-29T10:42:26.805+08:00  INFO 18548 --- [student-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-29T10:42:26.807+08:00  INFO 18548 --- [student-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-29T10:42:26.825+08:00  INFO 18548 --- [student-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JPA repository interfaces.
+2026-06-29T10:42:26.835+08:00  INFO 18548 --- [student-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-29T10:42:26.836+08:00  INFO 18548 --- [student-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-06-29T10:42:26.847+08:00  INFO 18548 --- [student-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2026-06-29T10:42:26.979+08:00  INFO 18548 --- [student-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5013c4c9-c071-37cc-8284-cd3a75d82c13
+2026-06-29T10:42:27.386+08:00  INFO 18548 --- [student-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2026-06-29T10:42:27.386+08:00  INFO 18548 --- [student-service] [           main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.39] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2026-06-29T10:42:27.387+08:00  INFO 18548 --- [student-service] [           main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.39] using APR version [1.7.4].
+2026-06-29T10:42:27.391+08:00  INFO 18548 --- [student-service] [           main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.11 19 Sep 2023]
+2026-06-29T10:42:27.397+08:00  INFO 18548 --- [student-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-29T10:42:27.397+08:00  INFO 18548 --- [student-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-06-29T10:42:27.499+08:00  INFO 18548 --- [student-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-29T10:42:27.499+08:00  INFO 18548 --- [student-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1239 ms
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+2026-06-29T10:42:27.757+08:00  INFO 18548 --- [student-service] [           main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2026-06-29T10:42:27.850+08:00  INFO 18548 --- [student-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-29T10:42:27.899+08:00  INFO 18548 --- [student-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-06-29T10:42:27.932+08:00  INFO 18548 --- [student-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-29T10:42:28.111+08:00  INFO 18548 --- [student-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-29T10:42:28.388+08:00  INFO 18548 --- [student-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-29T10:42:28.392+08:00  INFO 18548 --- [student-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+Logging initialized using 'class org.apache.ibatis.logging.stdout.StdOutImpl' adapter.
+Get /172.20.166.65 network interface 
+Get network interface info: name:wlan2 (Intel(R) Wi-Fi 6E AX211 160MHz)
+Initialization Sequence datacenterId:30 workerId:21
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.9 
+2026-06-29T10:42:28.866+08:00  WARN 18548 --- [student-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-29T10:42:28.900+08:00  WARN 18548 --- [student-service] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 7aba9209-c7dc-49f8-a803-51dfd3705e0f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-29T10:42:29.710+08:00  INFO 18548 --- [student-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoint(s) beneath base path '/actuator'
+2026-06-29T10:42:29.746+08:00  INFO 18548 --- [student-service] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1a4340f2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56a63c28, org.springframework.security.web.context.SecurityContextHolderFilter@3793896e, org.springframework.security.web.header.HeaderWriterFilter@38503309, org.springframework.security.web.authentication.logout.LogoutFilter@7c1e5d14, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4708acc6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b60ff1c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3b6098fd, org.springframework.security.web.access.ExceptionTranslationFilter@4c020e58, org.springframework.security.web.access.intercept.AuthorizationFilter@346e76ad]
+2026-06-29T10:42:30.505+08:00  INFO 18548 --- [student-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path ''
+2026-06-29T10:42:30.671+08:00  INFO 18548 --- [student-service] [           main] c.r.student.StudentApplication           : Started StudentApplication in 4.815 seconds (process running for 5.725)
+???????????????
+?????????????
+?????????????
+???????????????
+?????????????
+Student Service started on port 8082
+2026-06-29T10:44:41.880+08:00  INFO 18548 --- [student-service] [nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-29T10:44:41.883+08:00  INFO 18548 --- [student-service] [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-29T10:44:41.883+08:00  INFO 18548 --- [student-service] [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-06-29T10:44:41.896+08:00  WARN 18548 --- [student-service] [nio-8082-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/student/1' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2026-06-29T10:44:41.933+08:00 ERROR 18548 --- [student-service] [nio-8082-exec-1] c.r.c.exception.GlobalExceptionHandler   : ????: No static resource student/1.
+
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource student/1.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2abec591] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE id=? AND deleted_at IS NULL
+==> Parameters: 12(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2abec591]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e5dfe60] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE deleted_at IS NULL AND (user_id = ?)
+==> Parameters: 12(Long)
+<==    Columns: id, user_id, student_no, school_id, college, major, degree, enrollment_year, graduation_year, gpa, gender, birthday, bio, skills, expectation_salary, expectation_city, expectation_industry, expectation_position, resume_score, job_status, real_name, id_card_number, verify_status, verify_time, reject_reason, id_card_front_url, id_card_back_url, created_at, updated_at, deleted_at
+<==        Row: 2, 12, null, null, null, null, null, null, null, null, 1, 2000-01-15, <<BLOB>>, <<BLOB>>, null, null, null, null, 0, 1, ??, 110101199001011234, 2, 2026-06-27 16:37:50, <<BLOB>>, <<BLOB>>, <<BLOB>>, 2026-06-27 16:29:32, 2026-06-27 16:29:32, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e5dfe60]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@428582c8] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE id=? AND deleted_at IS NULL
+==> Parameters: 12(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@428582c8]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c0c8641] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE deleted_at IS NULL AND (user_id = ?)
+==> Parameters: 12(Long)
+<==    Columns: id, user_id, student_no, school_id, college, major, degree, enrollment_year, graduation_year, gpa, gender, birthday, bio, skills, expectation_salary, expectation_city, expectation_industry, expectation_position, resume_score, job_status, real_name, id_card_number, verify_status, verify_time, reject_reason, id_card_front_url, id_card_back_url, created_at, updated_at, deleted_at
+<==        Row: 2, 12, null, null, null, null, null, null, null, null, 1, 2000-01-15, <<BLOB>>, <<BLOB>>, null, null, null, null, 0, 1, ??, 110101199001011234, 2, 2026-06-27 16:37:50, <<BLOB>>, <<BLOB>>, <<BLOB>>, 2026-06-27 16:29:32, 2026-06-27 16:29:32, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c0c8641]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@8daf393] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE id=? AND deleted_at IS NULL
+==> Parameters: 12(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@8daf393]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49e7f9a8] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE deleted_at IS NULL AND (user_id = ?)
+==> Parameters: 12(Long)
+<==    Columns: id, user_id, student_no, school_id, college, major, degree, enrollment_year, graduation_year, gpa, gender, birthday, bio, skills, expectation_salary, expectation_city, expectation_industry, expectation_position, resume_score, job_status, real_name, id_card_number, verify_status, verify_time, reject_reason, id_card_front_url, id_card_back_url, created_at, updated_at, deleted_at
+<==        Row: 2, 12, null, null, null, null, null, null, null, null, 1, 2000-01-15, <<BLOB>>, <<BLOB>>, null, null, null, null, 0, 1, ??, 110101199001011234, 2, 2026-06-27 16:37:50, <<BLOB>>, <<BLOB>>, <<BLOB>>, 2026-06-27 16:29:32, 2026-06-27 16:29:32, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49e7f9a8]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61d0b8b7] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE id=? AND deleted_at IS NULL
+==> Parameters: 12(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61d0b8b7]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75760bc7] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE deleted_at IS NULL AND (user_id = ?)
+==> Parameters: 12(Long)
+<==    Columns: id, user_id, student_no, school_id, college, major, degree, enrollment_year, graduation_year, gpa, gender, birthday, bio, skills, expectation_salary, expectation_city, expectation_industry, expectation_position, resume_score, job_status, real_name, id_card_number, verify_status, verify_time, reject_reason, id_card_front_url, id_card_back_url, created_at, updated_at, deleted_at
+<==        Row: 2, 12, null, null, null, null, null, null, null, null, 1, 2000-01-15, <<BLOB>>, <<BLOB>>, null, null, null, null, 0, 1, ??, 110101199001011234, 2, 2026-06-27 16:37:50, <<BLOB>>, <<BLOB>>, <<BLOB>>, 2026-06-27 16:29:32, 2026-06-27 16:29:32, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75760bc7]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60bf9aeb] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE id=? AND deleted_at IS NULL
+==> Parameters: 12(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60bf9aeb]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@218290d0] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE deleted_at IS NULL AND (user_id = ?)
+==> Parameters: 12(Long)
+<==    Columns: id, user_id, student_no, school_id, college, major, degree, enrollment_year, graduation_year, gpa, gender, birthday, bio, skills, expectation_salary, expectation_city, expectation_industry, expectation_position, resume_score, job_status, real_name, id_card_number, verify_status, verify_time, reject_reason, id_card_front_url, id_card_back_url, created_at, updated_at, deleted_at
+<==        Row: 2, 12, null, null, null, null, null, null, null, null, 1, 2000-01-15, <<BLOB>>, <<BLOB>>, null, null, null, null, 0, 1, ??, 110101199001011234, 2, 2026-06-27 16:37:50, <<BLOB>>, <<BLOB>>, <<BLOB>>, 2026-06-27 16:29:32, 2026-06-27 16:29:32, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@218290d0]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7100a225] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE id=? AND deleted_at IS NULL
+==> Parameters: 12(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7100a225]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@372b346b] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE deleted_at IS NULL AND (user_id = ?)
+==> Parameters: 12(Long)
+<==    Columns: id, user_id, student_no, school_id, college, major, degree, enrollment_year, graduation_year, gpa, gender, birthday, bio, skills, expectation_salary, expectation_city, expectation_industry, expectation_position, resume_score, job_status, real_name, id_card_number, verify_status, verify_time, reject_reason, id_card_front_url, id_card_back_url, created_at, updated_at, deleted_at
+<==        Row: 2, 12, null, null, null, null, null, null, null, null, 1, 2000-01-15, <<BLOB>>, <<BLOB>>, null, null, null, null, 0, 1, ??, 110101199001011234, 2, 2026-06-27 16:37:50, <<BLOB>>, <<BLOB>>, <<BLOB>>, 2026-06-27 16:29:32, 2026-06-27 16:29:32, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@372b346b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d45559d] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE id=? AND deleted_at IS NULL
+==> Parameters: 12(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d45559d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c785fa6] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE deleted_at IS NULL AND (user_id = ?)
+==> Parameters: 12(Long)
+<==    Columns: id, user_id, student_no, school_id, college, major, degree, enrollment_year, graduation_year, gpa, gender, birthday, bio, skills, expectation_salary, expectation_city, expectation_industry, expectation_position, resume_score, job_status, real_name, id_card_number, verify_status, verify_time, reject_reason, id_card_front_url, id_card_back_url, created_at, updated_at, deleted_at
+<==        Row: 2, 12, null, null, null, null, null, null, null, null, 1, 2000-01-15, <<BLOB>>, <<BLOB>>, null, null, null, null, 0, 1, ??, 110101199001011234, 2, 2026-06-27 16:37:50, <<BLOB>>, <<BLOB>>, <<BLOB>>, 2026-06-27 16:29:32, 2026-06-27 16:29:32, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c785fa6]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61bdaabf] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE id=? AND deleted_at IS NULL
+==> Parameters: 12(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61bdaabf]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2080a084] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE deleted_at IS NULL AND (user_id = ?)
+==> Parameters: 12(Long)
+<==    Columns: id, user_id, student_no, school_id, college, major, degree, enrollment_year, graduation_year, gpa, gender, birthday, bio, skills, expectation_salary, expectation_city, expectation_industry, expectation_position, resume_score, job_status, real_name, id_card_number, verify_status, verify_time, reject_reason, id_card_front_url, id_card_back_url, created_at, updated_at, deleted_at
+<==        Row: 2, 12, null, null, null, null, null, null, null, null, 1, 2000-01-15, <<BLOB>>, <<BLOB>>, null, null, null, null, 0, 1, ??, 110101199001011234, 2, 2026-06-27 16:37:50, <<BLOB>>, <<BLOB>>, <<BLOB>>, 2026-06-27 16:29:32, 2026-06-27 16:29:32, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2080a084]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3440a866] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE id=? AND deleted_at IS NULL
+==> Parameters: 12(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3440a866]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7268ab28] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE deleted_at IS NULL AND (user_id = ?)
+==> Parameters: 12(Long)
+<==    Columns: id, user_id, student_no, school_id, college, major, degree, enrollment_year, graduation_year, gpa, gender, birthday, bio, skills, expectation_salary, expectation_city, expectation_industry, expectation_position, resume_score, job_status, real_name, id_card_number, verify_status, verify_time, reject_reason, id_card_front_url, id_card_back_url, created_at, updated_at, deleted_at
+<==        Row: 2, 12, null, null, null, null, null, null, null, null, 1, 2000-01-15, <<BLOB>>, <<BLOB>>, null, null, null, null, 0, 1, ??, 110101199001011234, 2, 2026-06-27 16:37:50, <<BLOB>>, <<BLOB>>, <<BLOB>>, 2026-06-27 16:29:32, 2026-06-27 16:29:32, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7268ab28]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4cf49cdd] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE id=? AND deleted_at IS NULL
+==> Parameters: 12(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4cf49cdd]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44210dbf] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE deleted_at IS NULL AND (user_id = ?)
+==> Parameters: 12(Long)
+<==    Columns: id, user_id, student_no, school_id, college, major, degree, enrollment_year, graduation_year, gpa, gender, birthday, bio, skills, expectation_salary, expectation_city, expectation_industry, expectation_position, resume_score, job_status, real_name, id_card_number, verify_status, verify_time, reject_reason, id_card_front_url, id_card_back_url, created_at, updated_at, deleted_at
+<==        Row: 2, 12, null, null, null, null, null, null, null, null, 1, 2000-01-15, <<BLOB>>, <<BLOB>>, null, null, null, null, 0, 1, ??, 110101199001011234, 2, 2026-06-27 16:37:50, <<BLOB>>, <<BLOB>>, <<BLOB>>, 2026-06-27 16:29:32, 2026-06-27 16:29:32, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44210dbf]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b050a48] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE id=? AND deleted_at IS NULL
+==> Parameters: 12(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b050a48]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@271e505c] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3b8f3785] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE deleted_at IS NULL AND (user_id = ?)
+==> Parameters: 12(Long)
+<==    Columns: id, user_id, student_no, school_id, college, major, degree, enrollment_year, graduation_year, gpa, gender, birthday, bio, skills, expectation_salary, expectation_city, expectation_industry, expectation_position, resume_score, job_status, real_name, id_card_number, verify_status, verify_time, reject_reason, id_card_front_url, id_card_back_url, created_at, updated_at, deleted_at
+<==        Row: 2, 12, null, null, null, null, null, null, null, null, 1, 2000-01-15, <<BLOB>>, <<BLOB>>, null, null, null, null, 0, 1, ??, 110101199001011234, 2, 2026-06-27 16:37:50, <<BLOB>>, <<BLOB>>, <<BLOB>>, 2026-06-27 16:29:32, 2026-06-27 16:29:32, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@271e505c]
+2026-06-29T16:14:52.870+08:00 ERROR 18548 --- [student-service] [nio-8082-exec-5] c.r.c.exception.GlobalExceptionHandler   : ????: No static resource buyer/order/list/1/1/10.
+
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource buyer/order/list/1/1/10.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3f0f5f8e] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@449002c5] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE id=? AND deleted_at IS NULL
+==> Parameters: 11(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3f0f5f8e]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@74793ada] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@449002c5] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE deleted_at IS NULL AND (user_id = ?)
+==> Parameters: 11(Long)
+<==    Columns: id, user_id, student_no, school_id, college, major, degree, enrollment_year, graduation_year, gpa, gender, birthday, bio, skills, expectation_salary, expectation_city, expectation_industry, expectation_position, resume_score, job_status, real_name, id_card_number, verify_status, verify_time, reject_reason, id_card_front_url, id_card_back_url, created_at, updated_at, deleted_at
+<==        Row: 1, 11, null, null, ????, ????????, ??, null, 2025, null, 1, 2006-04-08, <<BLOB>>, <<BLOB>>, 15, null, null, Java?????, 0, 1, ??, 440515200604080014, 2, 2026-06-25 15:29:00, <<BLOB>>, <<BLOB>>, <<BLOB>>, 2026-06-16 16:44:35, 2026-06-16 16:44:35, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@74793ada]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@16f21ae8] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@449002c5] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE id=? AND deleted_at IS NULL
+==> Parameters: 11(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@16f21ae8]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3bad9128] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@449002c5] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE deleted_at IS NULL AND (user_id = ?)
+==> Parameters: 11(Long)
+<==    Columns: id, user_id, student_no, school_id, college, major, degree, enrollment_year, graduation_year, gpa, gender, birthday, bio, skills, expectation_salary, expectation_city, expectation_industry, expectation_position, resume_score, job_status, real_name, id_card_number, verify_status, verify_time, reject_reason, id_card_front_url, id_card_back_url, created_at, updated_at, deleted_at
+<==        Row: 1, 11, null, null, ????, ????????, ??, null, 2025, null, 1, 2006-04-08, <<BLOB>>, <<BLOB>>, 15, null, null, Java?????, 0, 1, ??, 440515200604080014, 2, 2026-06-25 15:29:00, <<BLOB>>, <<BLOB>>, <<BLOB>>, 2026-06-16 16:44:35, 2026-06-16 16:44:35, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3bad9128]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41ad6f9f] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@22a80650] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE id=? AND deleted_at IS NULL
+==> Parameters: 11(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41ad6f9f]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f988960] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@22a80650] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,student_no,school_id,college,major,degree,enrollment_year,graduation_year,gpa,gender,birthday,bio,skills,expectation_salary,expectation_city,expectation_industry,expectation_position,resume_score,job_status,real_name,id_card_number,verify_status,verify_time,reject_reason,id_card_front_url,id_card_back_url,created_at,updated_at,deleted_at FROM student WHERE deleted_at IS NULL AND (user_id = ?)
+==> Parameters: 11(Long)
+<==    Columns: id, user_id, student_no, school_id, college, major, degree, enrollment_year, graduation_year, gpa, gender, birthday, bio, skills, expectation_salary, expectation_city, expectation_industry, expectation_position, resume_score, job_status, real_name, id_card_number, verify_status, verify_time, reject_reason, id_card_front_url, id_card_back_url, created_at, updated_at, deleted_at
+<==        Row: 1, 11, null, null, ????, ????????, ??, null, 2025, null, 1, 2006-04-08, <<BLOB>>, <<BLOB>>, 15, null, null, Java?????, 0, 1, ??, 440515200604080014, 2, 2026-06-25 15:29:00, <<BLOB>>, <<BLOB>>, <<BLOB>>, 2026-06-16 16:44:35, 2026-06-16 16:44:35, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f988960]

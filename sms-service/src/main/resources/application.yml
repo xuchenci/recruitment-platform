@@ -1,0 +1,46 @@
+server:
+  port: 8089
+
+spring:
+  application:
+    name: sms-service
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+  cloud:
+    nacos:
+      discovery:
+        enabled: false
+      config:
+        enabled: false
+    sentinel:
+      enabled: false
+
+# 阿里云短信配置
+aliyun:
+  sms:
+    access-key-id: your-access-key-id
+    access-key-secret: your-access-key-secret
+    endpoint: dysmsapi.aliyuncs.com
+    region-id: cn-hangzhou
+    sign-name: 数智化校企招聘平台
+    template-code:
+      verification-code: 100001
+      notification: 100001
+      interview-notification: 100001
+
+# 短信配置
+sms:
+  code:
+    length: 6
+    expire-minutes: 5
+    max-attempts: 3
+    resend-interval-seconds: 60
+
+# 日志配置
+logging:
+  level:
+    com.recruitment.sms: DEBUG
+    org.apache.rocketmq: INFO
+    com.alibaba.csp.sentinel: ERROR

@@ -1,0 +1,27 @@
+SET NAMES utf8mb4;
+
+UPDATE job_application SET 
+    interview_location = '广州市天河区某某大厦A座301室' 
+WHERE id = 1;
+
+UPDATE job_application SET 
+    interview_location = '腾讯会议：xxx-xxx-xxx' 
+WHERE id = 2;
+
+UPDATE job_application SET 
+    interview_location = '-' 
+WHERE id = 3;
+
+UPDATE job_application SET 
+    interview_location = '广州市天河区某某大厦A座305室' 
+WHERE id = 4;
+
+UPDATE job_application SET 
+    interview_location = '腾讯会议：yyy-yyy-yyy' 
+WHERE id = 5;
+
+INSERT INTO job_application (user_id, job_id, student_id, enterprise_id, status, cover_letter, apply_time, interview_time, interview_location) 
+VALUES 
+(11, 6, 1, 1, 2, '期待加入贵公司', NOW(), '2026-06-17 11:00', '广州市天河区某某大厦A座301室');
+
+SELECT id, interview_location FROM job_application;

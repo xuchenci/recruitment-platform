@@ -1,0 +1,79 @@
+server:
+  port: 8088
+  tomcat:
+    uri-encoding: UTF-8
+    charset: UTF-8
+
+spring:
+  application:
+    name: ai-service
+  http:
+    encoding:
+      enabled: true
+      charset: UTF-8
+      force: true
+  jackson:
+    charset: UTF-8
+    default-property-inclusion: non_null
+
+  cloud:
+    nacos:
+      discovery:
+        enabled: false
+      config:
+        enabled: false
+    sentinel:
+      enabled: false
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://localhost:3306/recruitment_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&connectionCollation=utf8mb4_unicode_ci&characterSetResults=utf8mb4"
+    username: root
+    password: 123456
+
+  # Spring AI 阿里百炼大模型配置
+  ai:
+    openai:
+      api-key: sk-edc7d0470d944bcfa05e5afe7af7d24b
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+      chat:
+        options:
+          model: qwen-plus
+          temperature: 0.7
+          max-tokens: 2048
+
+jwt:
+  secret: recruitment-platform-secret-key-2024-for-hs512-algorithm-must-be-at-least-512-bits
+  expiration: 86400000
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.recruitment.common.entity
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+
+# 日志配置
+logging:
+  level:
+    com.recruitment.ai: DEBUG
+    org.springframework.ai: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+  packages-to-scan: com.recruitment.ai.controller
+  paths-to-match: /ai/**

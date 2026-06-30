@@ -1,0 +1,14 @@
+# Project exclude paths
+/ai-service/target/
+/analytics-service/target/
+/application-service/target/
+/auth-service/target/
+/common-service/target/
+/enterprise-service/target/
+/gateway-service/target/
+/job-service/target/
+/notification-service/target/
+/recommendation-service/target/
+/resume-service/target/
+/sms-service/target/
+/student-service/target/

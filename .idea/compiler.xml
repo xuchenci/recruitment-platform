@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Annotation profile for recruitment-platform" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
+        </processorPath>
+        <module name="common-service" />
+        <module name="enterprise-service" />
+        <module name="ai-service" />
+        <module name="notification-service" />
+        <module name="recommendation-service" />
+        <module name="job-service" />
+        <module name="resume-service" />
+        <module name="application-service" />
+        <module name="auth-service" />
+        <module name="gateway-service" />
+        <module name="sms-service" />
+        <module name="analytics-service" />
+        <module name="student-service" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ai-service" options="-parameters" />
+      <module name="analytics-service" options="-parameters" />
+      <module name="application-service" options="-parameters" />
+      <module name="auth-service" options="-parameters" />
+      <module name="common-service" options="-parameters" />
+      <module name="enterprise-service" options="-parameters" />
+      <module name="gateway-service" options="-parameters" />
+      <module name="job-service" options="-parameters" />
+      <module name="notification-service" options="-parameters" />
+      <module name="recommendation-service" options="-parameters" />
+      <module name="recruitment-platform" options="-parameters" />
+      <module name="resume-service" options="-parameters" />
+      <module name="sms-service" options="-parameters" />
+      <module name="student-service" options="-parameters" />
+    </option>
+  </component>
+</project>

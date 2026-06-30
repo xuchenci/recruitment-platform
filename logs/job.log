@@ -1,0 +1,398 @@
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-06-15T22:13:36.791+08:00  INFO 16344 --- [job-service] [           main] com.recruitment.job.JobApplication       : Starting JobApplication v1.0.0 using Java 17.0.19 with PID 16344 (D:\recruitment-platform\job-service\target\job-service-1.0.0.jar started by 94738 in D:\recruitment-platform\job-service)
+2026-06-15T22:13:36.797+08:00  INFO 16344 --- [job-service] [           main] com.recruitment.job.JobApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-06-15T22:13:38.052+08:00  INFO 16344 --- [job-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-15T22:13:38.056+08:00  INFO 16344 --- [job-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-06-15T22:13:38.080+08:00  INFO 16344 --- [job-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2026-06-15T22:13:38.288+08:00  INFO 16344 --- [job-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=72853e20-804a-3690-ba03-afe45a1c67ec
+2026-06-15T22:13:39.218+08:00  INFO 16344 --- [job-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2026-06-15T22:13:39.220+08:00  INFO 16344 --- [job-service] [           main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.39] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2026-06-15T22:13:39.221+08:00  INFO 16344 --- [job-service] [           main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.39] using APR version [1.7.4].
+2026-06-15T22:13:39.222+08:00  INFO 16344 --- [job-service] [           main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.11 19 Sep 2023]
+2026-06-15T22:13:39.230+08:00  INFO 16344 --- [job-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-15T22:13:39.230+08:00  INFO 16344 --- [job-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-06-15T22:13:39.289+08:00  INFO 16344 --- [job-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-15T22:13:39.291+08:00  INFO 16344 --- [job-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2390 ms
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+Logging initialized using 'class org.apache.ibatis.logging.stdout.StdOutImpl' adapter.
+Get /172.20.235.124 network interface 
+Get network interface info: name:wlan2 (Intel(R) Wi-Fi 6E AX211 160MHz)
+Initialization Sequence datacenterId:30 workerId:17
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.9 
+2026-06-15T22:13:40.811+08:00  WARN 16344 --- [job-service] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 75ca972f-7841-4f3c-8a82-ee172b6fca8a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-15T22:13:42.281+08:00  INFO 16344 --- [job-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoint(s) beneath base path '/actuator'
+2026-06-15T22:13:42.404+08:00  INFO 16344 --- [job-service] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@64a4739, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ab3f194, org.springframework.security.web.context.SecurityContextHolderFilter@1afabf06, org.springframework.security.web.header.HeaderWriterFilter@4ef277ef, org.springframework.web.filter.CorsFilter@613a608e, org.springframework.security.web.authentication.logout.LogoutFilter@15aaf7b1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@53f1fcc2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4f0cdd0f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@37b1218, org.springframework.security.web.access.ExceptionTranslationFilter@9fd3b61, org.springframework.security.web.access.intercept.AuthorizationFilter@5169db2f]
+2026-06-15T22:13:43.233+08:00  INFO 16344 --- [job-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path ''
+2026-06-15T22:13:43.355+08:00  INFO 16344 --- [job-service] [           main] com.recruitment.job.JobApplication       : Started JobApplication in 7.193 seconds (process running for 7.842)
+2026-06-15T22:13:43.427+08:00  INFO 16344 --- [job-service] [           main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+???????????????
+?????????????
+?????????????
+???????????????
+??student????: Incorrect result size: expected 1, actual 0
+???????????????
+Job Service started on port 8084
+2026-06-15T22:13:57.346+08:00  INFO 16344 --- [job-service] [nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-15T22:13:57.347+08:00  INFO 16344 --- [job-service] [nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-15T22:13:57.347+08:00  INFO 16344 --- [job-service] [nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-06-15T22:13:57.368+08:00  WARN 16344 --- [job-service] [nio-8083-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/jobs/list' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2026-06-15T22:13:57.377+08:00  WARN 16344 --- [job-service] [nio-8083-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/jobs/list' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d9d3019] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,enterprise_id,category_id,job_title,job_type,salary_min,salary_max,city,district,address,experience_requirement,education_requirement,skill_requirements,job_description,job_responsibility,benefits,status,publish_time,expire_time,view_count,apply_count,created_at,updated_at,deleted_at FROM job WHERE deleted_at IS NULL AND (status = ?) ORDER BY publish_time DESC
+==> Parameters: 1(Integer)
+<==    Columns: id, enterprise_id, category_id, job_title, job_type, salary_min, salary_max, city, district, address, experience_requirement, education_requirement, skill_requirements, job_description, job_responsibility, benefits, status, publish_time, expire_time, view_count, apply_count, created_at, updated_at, deleted_at
+<==        Row: 1, 1, null, Java?????????, 1, 25, 40, ??, null, ????????????8??, 3-5?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 235, 12, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 2, 1, null, ???????, 1, 15, 22, ??, null, ????????????8??, 1-3?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 189, 8, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 3, 1, null, ?????????, 2, 4, 6, ??, null, ????????????8??, ??, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 45, 3, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 4, 2, null, UI???????, 1, 22, 35, ??, null, ??????????????, 3-5?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 312, 15, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 5, 2, null, ?????, 1, 12, 18, ??, null, ??????????????, 1-3?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 156, 6, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 6, 2, null, ??????????, 2, 5, 8, ??, null, ??????????????, ??, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 89, 4, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 7, 3, null, ????????, 1, 18, 28, ??, null, ??????????CBD, 3-5?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 267, 11, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 8, 3, null, ??????, 1, 10, 15, ??, null, ??????????CBD, 1-3?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 143, 7, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 9, 3, null, ???????????, 2, 3, 5, ??, null, ??????????CBD, ??, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 67, 2, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 10, 4, null, ?????????, 1, 20, 32, ??, null, ???????????, 3-5?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 198, 9, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 11, 4, null, Java?????, 1, 13, 20, ??, null, ???????????, 1-3?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 345, 16, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 12, 4, null, ????????????, 2, 4, 7, ??, null, ???????????, ??, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 112, 5, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 13, 5, null, ????????, 1, 28, 42, ??, null, ???????????????, 3-5?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 278, 14, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 14, 5, null, UI???, 1, 12, 18, ??, null, ???????????????, 1-3?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 167, 8, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 15, 5, null, ??????????, 2, 3, 5, ??, null, ???????????????, ??, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 78, 3, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 16, 6, null, ?????????, 1, 24, 38, ??, null, ???????????, 3-5?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 212, 10, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 17, 6, null, ????, 1, 10, 15, ??, null, ???????????, 1-3?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 134, 6, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 18, 6, null, ???????????, 2, 3, 5, ??, null, ???????????, ??, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 56, 2, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 19, 7, null, ??????????, 1, 22, 35, ??, null, ???????????, 3-5?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 189, 9, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 20, 7, null, ?????, 1, 12, 18, ??, null, ???????????, 1-3?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 156, 7, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 21, 7, null, Java??????????, 2, 4, 6, ??, null, ???????????, ??, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 98, 4, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 22, 8, null, Java?????????, 1, 26, 40, ??, null, ??????????, 3-5?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 245, 12, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 23, 8, null, ???????, 1, 14, 20, ??, null, ??????????, 1-3?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 178, 8, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 24, 8, null, ?????????, 2, 4, 7, ??, null, ??????????, ??, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 67, 3, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 25, 9, null, ?????????, 1, 20, 32, ??, null, ??????????, 3-5?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 201, 10, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 26, 9, null, ?????, 1, 12, 18, ??, null, ??????????, 1-3?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 145, 6, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 27, 9, null, UI????????, 2, 3, 5, ??, null, ??????????, ??, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 89, 4, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 28, 10, null, ??????????, 1, 18, 28, ??, null, ????????????, 3-5?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 176, 8, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 29, 10, null, ??????, 1, 10, 15, ??, null, ????????????, 1-3?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 123, 5, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==        Row: 30, 10, null, ??????????, 2, 4, 6, ??, null, ????????????, ??, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 54, 2, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==      Total: 30
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d9d3019]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@536aa3fd] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 1(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 1, 1, ????, 10000???, ???, null, null, <<BLOB>>, ?????????, https://www.tencent.com, ???, 13800138001, contact@tencent.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@536aa3fd]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15c57e80] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 1(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 1, 1, ????, 10000???, ???, null, null, <<BLOB>>, ?????????, https://www.tencent.com, ???, 13800138001, contact@tencent.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15c57e80]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@206cacdf] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 1(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 1, 1, ????, 10000???, ???, null, null, <<BLOB>>, ?????????, https://www.tencent.com, ???, 13800138001, contact@tencent.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@206cacdf]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f6d03aa] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 2(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 2, 2, ??????, 10000???, ????, null, null, <<BLOB>>, ??????????, https://www.alibaba.com, ??, 13800138002, contact@alibaba.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7f6d03aa]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60d2aa13] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 2(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 2, 2, ??????, 10000???, ????, null, null, <<BLOB>>, ??????????, https://www.alibaba.com, ??, 13800138002, contact@alibaba.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60d2aa13]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24a746f4] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 2(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 2, 2, ??????, 10000???, ????, null, null, <<BLOB>>, ??????????, https://www.alibaba.com, ??, 13800138002, contact@alibaba.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24a746f4]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b86db9c] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 3(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 3, 3, ????, 10000???, ???, null, null, <<BLOB>>, ?????????, https://www.bytedance.com, ???, 13800138003, contact@bytedance.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b86db9c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@35e3bbad] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 3(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 3, 3, ????, 10000???, ???, null, null, <<BLOB>>, ?????????, https://www.bytedance.com, ???, 13800138003, contact@bytedance.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@35e3bbad]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7db3faa3] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 3(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 3, 3, ????, 10000???, ???, null, null, <<BLOB>>, ?????????, https://www.bytedance.com, ???, 13800138003, contact@bytedance.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7db3faa3]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@10cb6c7a] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 4(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 4, 4, ????????, 10000???, ????, null, null, <<BLOB>>, ????????, https://www.huawei.com, ???, 13800138004, contact@huawei.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@10cb6c7a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f75bc1] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 4(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 4, 4, ????????, 10000???, ????, null, null, <<BLOB>>, ????????, https://www.huawei.com, ???, 13800138004, contact@huawei.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f75bc1]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19ad4671] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 4(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 4, 4, ????????, 10000???, ????, null, null, <<BLOB>>, ????????, https://www.huawei.com, ???, 13800138004, contact@huawei.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@19ad4671]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f29eb9c] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 5(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 5, 5, ??, 10000???, ????, null, null, <<BLOB>>, ??????????, https://www.meituan.com, ??, 13800138005, contact@meituan.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5f29eb9c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ced1e70] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 5(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 5, 5, ??, 10000???, ????, null, null, <<BLOB>>, ??????????, https://www.meituan.com, ??, 13800138005, contact@meituan.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ced1e70]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b58f2a1] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 5(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 5, 5, ??, 10000???, ????, null, null, <<BLOB>>, ??????????, https://www.meituan.com, ??, 13800138005, contact@meituan.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b58f2a1]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@232a28af] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 6(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 6, 6, ????, 10000???, ????, null, null, <<BLOB>>, ????????, https://www.jd.com, ???, 13800138006, contact@jd.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@232a28af]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@363e5488] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 6(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 6, 6, ????, 10000???, ????, null, null, <<BLOB>>, ????????, https://www.jd.com, ???, 13800138006, contact@jd.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@363e5488]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@33bf3468] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 6(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 6, 6, ????, 10000???, ????, null, null, <<BLOB>>, ????????, https://www.jd.com, ???, 13800138006, contact@jd.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@33bf3468]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@248674c7] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 7(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 7, 7, ??, 1000-9999?, ???, null, null, <<BLOB>>, ?????????, https://www.163.com, ??, 13800138007, contact@netease.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@248674c7]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2fc21e6c] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 7(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 7, 7, ??, 1000-9999?, ???, null, null, <<BLOB>>, ?????????, https://www.163.com, ??, 13800138007, contact@netease.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2fc21e6c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1fb8fa28] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 7(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 7, 7, ??, 1000-9999?, ???, null, null, <<BLOB>>, ?????????, https://www.163.com, ??, 13800138007, contact@netease.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1fb8fa28]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@66b20552] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 8(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 8, 8, ????, 1000-9999?, ????, null, null, <<BLOB>>, ??????????, https://www.mi.com, ??, 13800138008, contact@xiaomi.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@66b20552]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4a45edfd] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 8(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 8, 8, ????, 1000-9999?, ????, null, null, <<BLOB>>, ??????????, https://www.mi.com, ??, 13800138008, contact@xiaomi.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4a45edfd]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@727b955] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 8(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 8, 8, ????, 1000-9999?, ????, null, null, <<BLOB>>, ??????????, https://www.mi.com, ??, 13800138008, contact@xiaomi.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@727b955]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51cea14c] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 9(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 9, 9, ????, 1000-9999?, ????, null, null, <<BLOB>>, ????????????, https://www.didiglobal.com, ??, 13800138009, contact@didi.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51cea14c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57b924d5] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 9(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 9, 9, ????, 1000-9999?, ????, null, null, <<BLOB>>, ????????????, https://www.didiglobal.com, ??, 13800138009, contact@didi.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57b924d5]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b21cedb] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 9(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 9, 9, ????, 1000-9999?, ????, null, null, <<BLOB>>, ????????????, https://www.didiglobal.com, ??, 13800138009, contact@didi.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b21cedb]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4efc2c70] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 10(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 10, 10, ????, 1000-9999?, ????, null, null, <<BLOB>>, ?????????, https://www.antgroup.com, ???, 13800138010, contact@antgroup.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4efc2c70]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a7b2317] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 10(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 10, 10, ????, 1000-9999?, ????, null, null, <<BLOB>>, ?????????, https://www.antgroup.com, ???, 13800138010, contact@antgroup.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a7b2317]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7ca656d5] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 10(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 10, 10, ????, 1000-9999?, ????, null, null, <<BLOB>>, ?????????, https://www.antgroup.com, ???, 13800138010, contact@antgroup.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7ca656d5]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d379213] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,enterprise_id,category_id,job_title,job_type,salary_min,salary_max,city,district,address,experience_requirement,education_requirement,skill_requirements,job_description,job_responsibility,benefits,status,publish_time,expire_time,view_count,apply_count,created_at,updated_at,deleted_at FROM job WHERE id=? AND deleted_at IS NULL
+==> Parameters: 1(Long)
+<==    Columns: id, enterprise_id, category_id, job_title, job_type, salary_min, salary_max, city, district, address, experience_requirement, education_requirement, skill_requirements, job_description, job_responsibility, benefits, status, publish_time, expire_time, view_count, apply_count, created_at, updated_at, deleted_at
+<==        Row: 1, 1, null, Java?????????, 1, 25, 40, ??, null, ????????????8??, 3-5?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 235, 12, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d379213]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65561a91] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: UPDATE job SET enterprise_id=?, job_title=?, job_type=?, salary_min=?, salary_max=?, city=?, address=?, experience_requirement=?, education_requirement=?, skill_requirements=?, job_description=?, job_responsibility=?, benefits=?, status=?, publish_time=?, view_count=?, apply_count=?, created_at=?, updated_at=? WHERE id=? AND deleted_at IS NULL
+==> Parameters: 1(Long), Java?????????(String), 1(Integer), 25(Integer), 40(Integer), ??(String), ????????????8??(String), 3-5?(String), ??(String), ["Java", "Spring Boot", "MySQL", "Redis", "Git"](String), ??????????????????????????????????(String), ???????????????????????????????????????????????????(String), ["????", "???", "????", "??", "????"](String), 1(Integer), 2026-06-15T22:05:10(LocalDateTime), 236(Integer), 12(Integer), 2026-06-15T22:05:10(LocalDateTime), 2026-06-15T22:05:10(LocalDateTime), 1(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65561a91]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6215b21d] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,enterprise_id,category_id,job_title,job_type,salary_min,salary_max,city,district,address,experience_requirement,education_requirement,skill_requirements,job_description,job_responsibility,benefits,status,publish_time,expire_time,view_count,apply_count,created_at,updated_at,deleted_at FROM job WHERE id=? AND deleted_at IS NULL
+==> Parameters: 1(Long)
+<==    Columns: id, enterprise_id, category_id, job_title, job_type, salary_min, salary_max, city, district, address, experience_requirement, education_requirement, skill_requirements, job_description, job_responsibility, benefits, status, publish_time, expire_time, view_count, apply_count, created_at, updated_at, deleted_at
+<==        Row: 1, 1, null, Java?????????, 1, 25, 40, ??, null, ????????????8??, 3-5?, ??, <<BLOB>>, <<BLOB>>, <<BLOB>>, <<BLOB>>, 1, 2026-06-15 22:05:10, null, 236, 12, 2026-06-15 22:05:10, 2026-06-15 22:05:10, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6215b21d]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7140fca8] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e2162d7] will not be managed by Spring
+==>  Preparing: SELECT id,user_id,company_name,company_size,industry,business_license,logo,description,address,website,contact_name,contact_phone,contact_email,verified,verify_time,created_at,updated_at,deleted_at FROM enterprise WHERE id=? AND deleted_at IS NULL
+==> Parameters: 1(Long)
+<==    Columns: id, user_id, company_name, company_size, industry, business_license, logo, description, address, website, contact_name, contact_phone, contact_email, verified, verify_time, created_at, updated_at, deleted_at
+<==        Row: 1, 1, ????, 10000???, ???, null, null, <<BLOB>>, ?????????, https://www.tencent.com, ???, 13800138001, contact@tencent.com, 1, 2026-06-15 01:36:46, 2026-06-15 01:36:46, 2026-06-15 01:36:46, null
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7140fca8]
